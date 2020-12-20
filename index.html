@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Tugas sanbero</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <komentar v-for="comment in comments" :comment="comment"></komentar>
+        <textarea
+          v-model="kolom_komentar"
+          cols="50"
+          rows="4"
+          @keyup.enter="PostComment"
+        ></textarea>
+      </div>
+    </div>
+
+    <template id="komentar-template">
+      <div>
+        <button type="button" name="button" @click="tambah">+</button>
+        <div>
+          {{ comment.body }} || {{ comment.time }} || score: {{ score }}
+        </div>
+        <button type="button" name="button" @click="kurang">-</button>
+
+        <br /><br />
+      </div>
+    </template>
+  </body>
+  <script src="index.js"></script>
+</html>
